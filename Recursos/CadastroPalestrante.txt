@@ -1,0 +1,25 @@
+{
+    "Nome": "Meire Helen",
+    "Minicurriculo": "...",
+    "ImagemUrl": null,
+    "Telefone": "123456789",
+    "Email": "meire@gmail.com",
+    "RedesSociais": [
+        {
+            "nome": "facebook",
+            "URL": "facebook/java..."
+        },
+           {
+            "nome": "instagram",
+            "URL": "instagram/java..."
+        },
+        {
+            "nome": "youtube",
+            "URL": "youtube/java..."
+        }
+    ],
+    "PalestranteEventos": []
+
+
+    
+}

@@ -1,4 +1,92 @@
 {
+   "Local": "Belo Horizonte",
+   "DataEvento": "#5/23/2021 18:30:52PM#",
+    "Tema": "Angular",
+   "QtdPessoas": 300,
+   "ImagemUrl": "img1.jpg",
+   "Telefone": "123456789",
+   "Email": "java@java.com.br",
+    "Lotes": [
+        {
+            "nome": "1º Lote",
+            "preco": 50.5,
+            "DataInicio": null,
+            "DataFim": null,
+            "quantidade": 150
+
+        },
+        {
+            "nome": "2º Lote",
+            "preco": 60,
+            "DataInicio": null,
+            "DataFim": null,
+            "quantidade": 150
+
+        }
+    ],
+    "RedesSociais": [
+        {
+            "nome": "facebook",
+            "URL": "facebook/java..."
+        },
+           {
+            "nome": "instagram",
+            "URL": "instagram/java..."
+        },
+        {
+            "nome": "youtube",
+            "URL": "youtube/java..."
+        }
+    ],
+    "PalestranteEventos": []
+
+}
+
+{
+   "Local": "S?o Paulo",
+   "DataEvento": "#5/23/2021 18:30:52PM#",
+    "Tema": "Angular e .Net Core",
+   "QtdPessoas": 300,
+   "ImagemUrl": "img2.jpg",
+   "Telefone": "123456789",
+   "Email": "angular@net.com.br",
+    "Lotes": [
+        {
+            "nome": "1º Lote",
+            "preco": 50.5,
+            "DataInicio": null,
+            "DataFim": null,
+            "quantidade": 150
+
+        },
+        {
+            "nome": "2º Lote",
+            "preco": 60,
+            "DataInicio": null,
+            "DataFim": null,
+            "quantidade": 150
+
+        }
+    ],
+    "RedesSociais": [
+        {
+            "nome": "facebook",
+            "URL": "facebook/java..."
+        },
+           {
+            "nome": "instagram",
+            "URL": "instagram/java..."
+        },
+        {
+            "nome": "youtube",
+            "URL": "youtube/java..."
+        }
+    ],
+    "PalestranteEventos": []
+
+}
+
+{
    "Local": "Rio de Janeiro",
    "DataEvento": "#5/23/2021 18:30:52PM#",
     "Tema": "Java",
