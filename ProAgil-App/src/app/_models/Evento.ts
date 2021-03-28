@@ -13,6 +13,7 @@ export interface Evento {
    imagemUrl: string
    qtdPessoas: number;
    lotes: Lote[];
+   //lote : string;
    redesSociais: RedeSocial[];
    palestranteEventos: Palestrante[];
 }
