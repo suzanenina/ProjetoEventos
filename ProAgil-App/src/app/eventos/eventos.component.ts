@@ -1,4 +1,5 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Evento } from '../_models/Evento';
 import { EventoService } from '../_services/evento.service';
@@ -17,7 +18,7 @@ export class EventosComponent implements OnInit {
   imagemMargem = 2;
   mostrarImagem = false;
   modalRef: BsModalRef = new BsModalRef;
-
+  registerForm: any;
 
   get filtroLista(): string
   {
@@ -36,7 +37,8 @@ export class EventosComponent implements OnInit {
 
   constructor(
     private eventoService: EventoService,
-    private modalService : BsModalService
+    private modalService : BsModalService,
+    private fb : FormBuilder
   ) {}
 
   openModal(template: TemplateRef<any>)
@@ -47,12 +49,30 @@ export class EventosComponent implements OnInit {
 
   ngOnInit()
   {
+    this.validation();
     this.getEventos();
+
   }
 
   alternarImagem()
   {
     this.mostrarImagem = !this.mostrarImagem;
+  }
+
+  validation(){
+    this.registerForm = this.fb.group({
+      tema : ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
+      local : ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
+      dataEvento : ['', Validators.required],
+      qtdPessoas : ['',[ Validators.required, Validators.max(1200)]],
+      telefone : ['', Validators.required],
+      email : ['', [Validators.required, Validators.email]]
+
+    })
+  }
+
+  salvarAlteracao(){
+
   }
 
   filtrarEventos(filtrarPor:string): Evento[]
