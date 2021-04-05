@@ -61,7 +61,7 @@
       </td>
       <td>
         <div class="btn-group">
-          <button class="btn btn-sm btn btn-success" tooltip= "editar" (click)="openModal(template)" >
+          <button class="btn btn-sm btn btn-success" tooltip= "editar" (click)="editarEvento(evento, template)" >
             <i class="fa fa-edit"></i>
           </button>
           <button class="btn btn-sm btn btn-danger" tooltip= "remover">
@@ -98,7 +98,7 @@
               <input type="text" class="form-control"
               [ngClass]="{'is-invalid': registerForm.get('tema').errors && registerForm.get('tema').touched}"
 
-              formControlName="tema"  placeholder="Insira o Tema">
+              formControlName="tema"  placeholder="Insira o Tema ">
               <div *ngIf="registerForm.get('tema').hasError('required')" class="invalid-feedback">
                 Tema é obrigatório
               </div>
@@ -185,7 +185,8 @@
         <button class="btn btn-secondary" (click)="template.hide()">
           Fechar
         </button>
-        <button class="btn btn-primary ml-auto" [disabled]='!registerForm.valid' (click)="salvarAlteracao()">
+        <button class="btn btn-primary ml-auto" [disabled]='!registerForm.valid'
+            (click)="salvarAlteracao(template)">
           Salvar Alterações
         </button>
       </div>

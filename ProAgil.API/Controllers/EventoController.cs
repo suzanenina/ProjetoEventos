@@ -92,7 +92,7 @@ namespace ProAgil.API.Controllers
 
                 if(evento == null) return NotFound();
 
-                _repo.Update(evento);
+                _repo.Update(model);
                 if(await _repo.SaveChangesAsync())
                 {
                     return Created($"/api/evento/{evento.Id}", evento);
