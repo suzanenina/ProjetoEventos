@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
@@ -28,7 +29,7 @@ namespace ProAgil.API.Controllers
             try
             {
                 var eventos = await _repo.GetAllEventoAsync(true);
-                var results = _mapper.Map<List<EventoDto>>(eventos);
+                var results = _mapper.Map<List<EventoDto>>(eventos).OrderBy(x=>x.Id);
 
                 return Ok(results);
             }
@@ -62,7 +63,7 @@ namespace ProAgil.API.Controllers
             {
                 var evento = await _repo.GetAllEventoAsyncByTema(tema, true);
                 
-                var resultado = _mapper.Map<EventoDto[]>(evento);
+                var resultado = _mapper.Map<EventoDto[]>(evento).OrderBy(x=>x.Id);
                 return Ok(resultado);
             }
             catch (System.Exception ex)
@@ -93,12 +94,13 @@ namespace ProAgil.API.Controllers
             return BadRequest();
         }
 
-        [HttpPut("{EventoId}")]
-        public async Task<IActionResult> Put(int eventoId, Evento model)
+       // [HttpPut("{EventoId}")]
+       [HttpPut]
+        public async Task<IActionResult> Put(Evento model)
         {
             try
             {
-                var evento = await _repo.GetAllEventoAsyncById(eventoId, false);
+                var evento = await _repo.GetAllEventoAsyncById(model.Id, false);
 
                 if(evento == null) return NotFound();
 
@@ -117,11 +119,11 @@ namespace ProAgil.API.Controllers
         }
 
         [HttpDelete]
-        public async Task<IActionResult> Delete(int eventoId)
+        public async Task<IActionResult> Delete(int id)
         {
             try
             {
-                var evento = await _repo.GetAllEventoAsyncById(eventoId, false);
+                var evento = await _repo.GetAllEventoAsyncById(id, false);
 
                 if(evento == null) return NotFound();
 

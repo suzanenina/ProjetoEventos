@@ -1,0 +1,9 @@
+Pró Agil 
+
+29/04
+- Delete/ Editar não está funcionando através da página, api está ok.
+- arrumar validação
+- img não está sendo exibida ao criar/editar 
+
+
+
