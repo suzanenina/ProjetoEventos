@@ -27,6 +27,7 @@ export class EventosComponent implements OnInit {
   //modalRef: BsModalRef = new BsModalRef;
   registerForm: any;
   modoSalvar: string = 'post';
+  bodyDeletarEvento = '';
 
   get filtroLista(): string
   {
@@ -71,6 +72,25 @@ export class EventosComponent implements OnInit {
 
        this.registerForm.patchValue(this.evento);
       // this.salvarAlteracao(template);
+    }
+
+    excluirEvento(evento: Evento, template: any)
+    {
+       this.openModal(template);
+       this.evento = evento;
+       this.bodyDeletarEvento = `Tem certeza que deseja excluir o evento: ${evento.tema}, código: ${evento.id} ?`;
+    }
+
+    confirmeDelete(template: any)
+    {
+      this.eventoService.deleteEvento(this.evento.id).subscribe(() =>
+      {
+        template.hide();
+        this.getEventos();
+      }, error => {
+        console.log(error);
+      })
+
     }
 
     salvarAlteracao(template: any)

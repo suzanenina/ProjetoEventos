@@ -106,7 +106,6 @@ namespace ProAgil.API.Controllers
                 if(await _repo.SaveChangesAsync())
                 {
                     return Created($"/api/evento/{evento.Id}", evento);
-
                 }
             }
             catch (System.Exception)
