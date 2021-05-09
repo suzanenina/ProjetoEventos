@@ -5,5 +5,10 @@ Pró Agil
 - arrumar validação
 - img não está sendo exibida ao criar/editar 
 
+09/05
+- instalado ngx toast-r para exibição de um pop up de sucesso/erro, 
+porém não é possível visualizar o efeito nesse momento devido ao erro na página.Verificar.
+- @Input para o Título dinâmico não está funcionando.  
+
 
 

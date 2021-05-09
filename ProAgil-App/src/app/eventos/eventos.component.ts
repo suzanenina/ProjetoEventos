@@ -8,6 +8,7 @@ import { EventoService } from '../_services/evento.service';
 import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
+import { ToastrService } from 'ngx-toastr';
 defineLocale('pt-br', ptBrLocale);
 
 @Component({
@@ -17,6 +18,7 @@ defineLocale('pt-br', ptBrLocale);
 })
 export class EventosComponent implements OnInit {
 
+  titulo:'Eventos Coco';
   _filtroLista: string = '';
   eventosFiltrados: Evento[] = [];
   eventos : Evento[] = [];
@@ -28,6 +30,7 @@ export class EventosComponent implements OnInit {
   registerForm: any;
   modoSalvar: string = 'post';
   bodyDeletarEvento = '';
+  dataEvento: string;
 
   get filtroLista(): string
   {
@@ -45,7 +48,8 @@ export class EventosComponent implements OnInit {
     private eventoService: EventoService,
     private modalService : BsModalService,
     private fb : FormBuilder,
-    private localService: BsLocaleService
+    private localService: BsLocaleService,
+    private toastr: ToastrService
 
     )
     {
@@ -87,7 +91,9 @@ export class EventosComponent implements OnInit {
       {
         template.hide();
         this.getEventos();
+        this.toastr.success('Evento excluído com sucesso!');
       }, error => {
+        this.toastr.success('Erro ao excluir evento');
         console.log(error);
       })
 
@@ -104,8 +110,10 @@ export class EventosComponent implements OnInit {
             (novoEvento: any) => {
               template.hide();
               this.getEventos();
+              this.toastr.success('Evento inserido com sucesso!');
             },
             error => {
+              this.toastr.success('Erro ao inserir evento');
               console.log(error);
             }
             );
@@ -118,8 +126,10 @@ export class EventosComponent implements OnInit {
 
                 template.hide();
                 this.getEventos();
+                this.toastr.success('Evento atualizado com sucesso!');
               },
               error => {
+                this.toastr.success('Erro ao atualizar evento');
                 console.log(error);
               }
               );
