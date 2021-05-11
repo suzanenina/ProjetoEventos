@@ -6,9 +6,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./titulo.component.css']
 })
 export class TituloComponent implements OnInit {
-@Input() titulo: string;
+  @Input() titulo: string;
 
-constructor() { }
+  constructor() { }
 
   ngOnInit() {
   }

@@ -31,6 +31,7 @@ export class EventosComponent implements OnInit {
   modoSalvar: string = 'post';
   bodyDeletarEvento = '';
   dataEvento: string;
+  changeEvent: Event;
 
   get filtroLista(): string
   {
@@ -182,6 +183,24 @@ export class EventosComponent implements OnInit {
           console.log(error);
         }
       );
+    }
+
+    onFileChange(eventEntrada : Event)
+    {
+       this.changeEvent = eventEntrada;
+
+       const reader = new FileReader();
+
+       if(this.changeEvent!=null)
+       {
+          // if(this.changeEvent.target.files)
+          // {
+
+          // }
+
+       }
+
+
     }
 
 }
